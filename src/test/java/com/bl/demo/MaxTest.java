@@ -7,27 +7,26 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class MaxTest {
-    Max maxObject;
-
-    @Before
-    public void init(){
-        maxObject = new Max();
-    }
 
     @Test
     public void testPasses_ForInteger_WhenReturnsMaximum(){
-        int result=maxObject.getMaximum(new Integer[]{2,5,10});
+        int result=new Max<>(new Integer[]{2,5,10}).getMaximum();
         Assert.assertEquals(10, result);
     }
 
     @Test
     public void testPasses_ForFloat_WhenReturnsMaximum(){
-        Assert.assertEquals(10.7f, maxObject.getMaximum(new Float[]{2.3f,5.2f,10.7f}),0);
+        Assert.assertEquals(10.7f, new Max<Float>(new Float[]{2.2f,3.5f,10.7f}).getMaximum(),0);
     }
 
     @Test
     public void testPasses_ForString_WhenReturnsMaximum(){
-        Assert.assertEquals("xyz", maxObject.getMaximum(new String[]{"abc","pqr","xyz"}));
+        Assert.assertEquals("xyz", new Max<String>(new String[]{"abc","pqr","xyz"}).getMaximum());
+    }
+
+    @Test
+    public void testPasses_WhenPassingValues_ThroughConstructor_ReturnsMaximum(){
+        Assert.assertEquals(10,new Max(4,10,9).getMax());
     }
 
 }
