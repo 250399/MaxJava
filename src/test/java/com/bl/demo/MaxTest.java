@@ -16,12 +16,18 @@ public class MaxTest {
 
     @Test
     public void testPasses_ForInteger_WhenReturnsMaximum(){
-        Assert.assertEquals(10, maxObject.getMaximum(new int[]{2,5,10}));
+        int result=maxObject.getMaximum(new Integer[]{2,5,10});
+        Assert.assertEquals(10, result);
     }
 
     @Test
     public void testPasses_ForFloat_WhenReturnsMaximum(){
-        Assert.assertEquals(10.7f, maxObject.getMaximum(new float[]{2.3f,5.2f,10.7f}),0);
+        Assert.assertEquals(10.7f, maxObject.getMaximum(new Float[]{2.3f,5.2f,10.7f}),0);
+    }
+
+    @Test
+    public void testPasses_ForString_WhenReturnsMaximum(){
+        Assert.assertEquals("xyz", maxObject.getMaximum(new String[]{"abc","pqr","xyz"}));
     }
 
 }
