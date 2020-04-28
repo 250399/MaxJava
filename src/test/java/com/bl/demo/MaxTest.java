@@ -19,4 +19,9 @@ public class MaxTest {
         Assert.assertEquals(10, maxObject.getMaximum(new int[]{2,5,10}));
     }
 
+    @Test
+    public void testPasses_ForFloat_WhenReturnsMaximum(){
+        Assert.assertEquals(10.7f, maxObject.getMaximum(new float[]{2.3f,5.2f,10.7f}),0);
+    }
+
 }
