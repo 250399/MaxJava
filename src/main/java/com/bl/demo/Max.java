@@ -20,7 +20,7 @@
 
         public T getMaximum (){
                 quickSort(0,array.length-1);
-                return array[array.length-1];
+                return array[0];
         }
 
         public T getMax(){
@@ -47,7 +47,7 @@
         }
 
         int sort(int left,int right){
-            int pIndex=right;
+            int pIndex=left;
             T pi=array[right];
             for(int i = left ; i < right ; i++ ){
                 if(pi.compareTo(array[i])<0){

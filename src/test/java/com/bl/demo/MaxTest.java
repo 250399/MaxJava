@@ -38,7 +38,7 @@ public class MaxTest {
     }
 
     @Test
-    public void asd(){
-        Assert.assertEquals(10,new Max().getMax(1,2,3,4,10));
+    public void givenVariableLengthArguments_ReturnsMaximum(){
+        Assert.assertEquals(10,new Max().getMax(1,2,10,4,3));
     }
 }
