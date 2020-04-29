@@ -16,17 +16,29 @@ public class MaxTest {
 
     @Test
     public void testPasses_ForFloat_WhenReturnsMaximum(){
-        Assert.assertEquals(10.7f, new Max<Float>(new Float[]{2.2f,3.5f,10.7f}).getMaximum(),0);
+        Assert.assertEquals(10.7f, new Max<>(new Float[]{2.2f,3.5f,10.7f}).getMaximum(),0);
     }
 
     @Test
     public void testPasses_ForString_WhenReturnsMaximum(){
-        Assert.assertEquals("xyz", new Max<String>(new String[]{"abc","pqr","xyz"}).getMaximum());
+        Assert.assertEquals("xyz", new Max<>(new String[]{"abc","pqr","xyz"}).getMaximum());
     }
 
     @Test
     public void testPasses_WhenPassingValues_ThroughConstructor_ReturnsMaximum(){
-        Assert.assertEquals(10,new Max(4,10,9).getMax());
+        Max max = (Max) new Max(4,10,9);
+        Assert.assertEquals(10,max.getMax());
+
     }
 
+    @Test
+    public void testPasses_WhenPassingValues_ThroughStringConstructor_ReturnsMaximum(){
+        Max max = (Max) new Max("pqe","abc","xyz");
+        Assert.assertEquals("xyz",max.getMax());
+    }
+
+    @Test
+    public void asd(){
+        Assert.assertEquals(10,new Max().getMax(1,2,3,4,10));
+    }
 }
